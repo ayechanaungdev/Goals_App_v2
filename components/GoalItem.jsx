@@ -1,15 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-type GoalItemProps = {
-  id: string;
-  text: string;
-  isCompleted: boolean;
-  onDeleteItem: (id: string) => void;
-  onToggleComplete: (id: string) => void;
-};
 
-const GoalItem = (props: GoalItemProps) => {
+const GoalItem = (props) => {
 
     const handleToggleComplete = () => {
         if (props.onToggleComplete) {

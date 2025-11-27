@@ -4,7 +4,6 @@ import GoalInput from '../../components/GoalInput';
 import GoalItem from '../../components/GoalItem';
 import { useGoals } from '../../context/GoalsContext';
 import Header from '../../components/Header';
-import { useNavigation } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 
 const Home = () => {

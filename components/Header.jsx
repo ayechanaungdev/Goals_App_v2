@@ -1,12 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
 
-type HeaderProps = {
-  title: string;
-  onAboutPress: () => void;
-};
-
-const Header = ({ title, onAboutPress }: HeaderProps) => {
+const Header = ({ title, onAboutPress }) => {
   return (
     <View style={styles.header}>
       <View style={styles.headerContent}>

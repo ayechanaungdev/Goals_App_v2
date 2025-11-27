@@ -2,18 +2,14 @@ import { Image, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } fro
 import { useState, useRef } from 'react';
 import { useGoals } from '../context/GoalsContext';
 
-type GoalInputProps = {
-  visible: boolean;
-  onCancel: () => void;
-};
 
-const GoalInput = (props: GoalInputProps) => {
-    const [enteredGoalText, setEnteredGoalText] = useState<string>('');
-    const [isInvalid, setIsInvalid] = useState<boolean>(false);
-    const inputRef = useRef<TextInput>(null);
+const GoalInput = (props) => {
+    const [enteredGoalText, setEnteredGoalText] = useState('');
+    const [isInvalid, setIsInvalid] = useState(false);
+    const inputRef = useRef(null);
     const { addGoal } = useGoals();
 
-    function goalInputHandler(enteredText: string) {
+    function goalInputHandler(enteredText) {
         setEnteredGoalText(enteredText);
         if (enteredText.trim().length > 0) {
             setIsInvalid(false);
