@@ -3,10 +3,10 @@ import React from 'react'
 import { useGoals } from "../../context/GoalsContext";
 import  GoalItem  from '../../components/GoalItem';
 import Header from '../../components/Header';
-import { useNavigation } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
 
 const Completed = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
   const {goals, deleteGoal, toggleGoalCompletion, clearCompletedGoals } = useGoals();
   const completedGoals = goals.filter(goal => goal.isCompleted);
 
@@ -18,7 +18,7 @@ const Completed = () => {
     <>
     <Header
       title="My Goals"
-      onAboutPress={() => navigation.navigate('About')}
+      onAboutPress={() => router.push('/about')}
     />
     <View style={styles.container}>
       <View style={styles.goalsHeader}>

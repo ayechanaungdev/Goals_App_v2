@@ -1,8 +1,8 @@
+import { useRouter } from 'expo-router';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { CommonActions, useNavigation } from '@react-navigation/native';
 
 const Goals_About = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
@@ -30,15 +30,10 @@ const Goals_About = () => {
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => {
-          if (navigation.canGoBack()) {
-            navigation.goBack();
+          if(router.canGoBack()){
+            router.back();
           } else {
-            navigation.dispatch(
-              CommonActions.reset({
-                index: 0,
-                routes: [{ name: 'Main' }], // root tab navigator name
-              })
-            );
+            router.replace('/(tabs)');
           }
         }}
       >

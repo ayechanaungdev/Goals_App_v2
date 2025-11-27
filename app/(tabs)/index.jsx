@@ -5,9 +5,10 @@ import GoalItem from '../../components/GoalItem';
 import { useGoals } from '../../context/GoalsContext';
 import Header from '../../components/Header';
 import { useNavigation } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
 
 const Home = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const { goals, deleteGoal, toggleGoalCompletion } = useGoals();
 
@@ -26,7 +27,7 @@ const Home = () => {
     <View style={styles.appContainer}>
       <Header
         title="My Goals"
-        onAboutPress={() => navigation.navigate('About')}
+        onAboutPress={() => router.push('/about')}
       />
 
       <View style={styles.contentContainer}>
