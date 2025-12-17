@@ -75,7 +75,7 @@ export const GoalsProvider = ({ children }) => {
       const newStatus = !goal.isCompleted;
       Toast.show({
         type: "success",
-        text1: newStatus ? "Goal completed" : "Goal marked as pending",
+        text1: newStatus ? "Goal is set 'completed'" : "Goal marked as pending",
       });
     }
   };
@@ -87,7 +87,7 @@ export const GoalsProvider = ({ children }) => {
     if (completedCount > 0) {
       Toast.show({
         type: "success",
-        text1: `${completedCount} completed goal(s) cleared`,
+        text1: "All completed goal(s) cleared",
       });
     } else {
       Toast.show({ type: "info", text1: "No completed goals to clear" });
