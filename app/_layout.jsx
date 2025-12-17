@@ -3,6 +3,7 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { Stack } from 'expo-router'
 import { GoalsProvider } from '../context/GoalsContext'
+import Toast from 'react-native-toast-message'
 
 const RootLayout = () => {
   return (
@@ -14,6 +15,7 @@ const RootLayout = () => {
             <Stack.Screen name='about' />
         </Stack>
       </GoalsProvider>
+      <Toast />
     </>
   )
 }
